@@ -1,0 +1,45 @@
+{
+	"$schema": "https://getcomposer.org/schema.json",
+	"name" : "red-scale-dragon/app",
+	"description" : "The base application code for the Dragon Framework",
+	"type" : "project",
+	"license" : "MIT",
+	"keywords": ["framework", "dragon", "WordPress", "Plugin"],
+	"require" : {
+		"php": "^8.1",
+		"red-scale-dragon/framework": "^2.0"
+	},
+	"require-dev" : {
+		"spatie/laravel-ignition": "^2.8",
+		"yoast/phpunit-polyfills": "^3.0",
+		"phpunit/phpunit": "^9.6"
+	},
+	"autoload": {
+	    "psr-4": {
+	        "App\\": "app/"
+	    }
+	},
+	"autoload-dev": {
+	    "psr-4": {
+	        "Tests\\": "tests/"
+	    }
+	},
+	"scripts" : {
+		"post-install-cmd" : [
+			"composer dump-autoload"
+		],
+		"post-update-cmd" : [
+			"composer dump-autoload"
+		],
+		"post-autoload-dump": [
+			"Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+		]
+	},
+	"config": {
+	    "optimize-autoloader": true,
+	    "preferred-install": "dist",
+	    "sort-packages": true
+	},
+	"minimum-stability": "stable",
+	"prefer-stable": true
+}
