@@ -97,5 +97,4 @@ Temporary Items
 
 !composer.lock
 /vendor
-/storage
 .env
