@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Dragon\Support\User;
 
 class AdminSettingsRequest extends FormRequest {
 	public function messages(): array {
@@ -15,7 +14,6 @@ class AdminSettingsRequest extends FormRequest {
 	public function rules(): array {
 		return [
 			'remove_migrations_on_deactivation' => 'required|in:yes,no',
-			'test_field'	=> 'string|nullable',
 		];
 	}
 }

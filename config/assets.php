@@ -52,7 +52,9 @@ return [
      */
 	'admin' => [
 		'css' => [
-			//
+			'app' => [
+				'style' => 'global/admin.css',
+			],
 		],
 		'js' => [
 			//
