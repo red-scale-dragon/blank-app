@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\AdminLogController;
+use Dragon\Http\Controllers\Admin\Table\ConfigurationEditorTable;
+use Dragon\Http\Controllers\Admin\Table\ConfigurationFileDetails;
 
 return [
 	/*
@@ -25,8 +27,9 @@ return [
 	],
 	'submenu' => [
 		AdminLogController::class,
+		ConfigurationEditorTable::class,
 	],
 	'hidden_menu' => [
-		//
+		ConfigurationFileDetails::class,
 	],
 ];
