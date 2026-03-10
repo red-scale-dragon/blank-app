@@ -14,6 +14,8 @@ class AdminSettingsRequest extends FormRequest {
 	public function rules(): array {
 		return [
 			'remove_migrations_on_deactivation' => 'required|in:yes,no',
+			'enable_plugin_updated_emails'		=> 'required|in:yes,no',
+			'enable_theme_updated_emails'		=> 'required|in:yes,no',
 		];
 	}
 }
