@@ -1,6 +1,7 @@
 <?php
 
 use App\Exceptions\Handler;
+use Dragon\Hooks\AdminPluginHooks;
 
 return [
 	/*
@@ -52,7 +53,14 @@ return [
 			//
 		],
 		'filters' => [
-			//
+			'auto_plugin_update_send_email'	=> [
+				'callback'	=> [AdminPluginHooks::class, 'shouldSendPluginUpdateEmails'],
+				'args'		=> 1,
+			],
+			'auto_theme_update_send_email'	=> [
+				'callback'	=> [AdminPluginHooks::class, 'shouldSendThemeUpdateEmails'],
+				'args'		=> 1,
+			],
 		],
 	],
 	'frontend' => [
